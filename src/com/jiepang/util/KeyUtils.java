@@ -8,18 +8,20 @@ public class KeyUtils {
 	/** Train Number */
 	static final String TRAIN_NUMBER = "tno:";
 	
-	public static String orders(String uid){
-		return UID + uid + ":orders";
+	public static String order(String uid,String tno){
+		return UID + uid + "tno:"+ tno +"order";
 	}
+	
 	
 	/**
 	 * 
 	 * @param trainNo 车次
 	 * @return 此车次的余票对应redis的KEY
 	 */
-	public static String remain(String trainNo){
-		return TRAIN_NUMBER + trainNo + ":remain";
+	public static String remain(String trainNo,String date){
+		return TRAIN_NUMBER + trainNo +"date:"+ date +":remain";
 	}
+	
 	
 	/*
 	 *global tickets information

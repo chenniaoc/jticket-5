@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jiepang.dao.RedisDAO;
+import com.jiepang.model.Order;
 
 
 @Controller
@@ -59,9 +60,15 @@ public class TicketController {
 	}
 	
 	@RequestMapping(value="/reserve",method=RequestMethod.GET)
-	public @ResponseBody Map bookTicket(@RequestParam String name) {
+	public @ResponseBody Map bookTicket(@RequestParam String[] uids,String date,String TrainNo,int numerOfTicket) {
 		Map map = new HashMap();
+		Order order = new Order();
+		order.setIdentifyNo(uids);
+		order.setTrainDate(date);
+		order.setTrainNo(TrainNo);
+		String msg = redisDAO.addReserve(order);
 		
+		map.put("message", msg);
 		return map;
 	}
 	
