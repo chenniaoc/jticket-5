@@ -1,1 +1,5 @@
 http://localhost:8080/JTicket/reserve?uids=22&uids=33&numerOfTicket=2&TrainNo=T10&date=20121120
+
+http://localhost:8080/JTicket/return?uids=22&uids=33&numerOfTicket=2&TrainNo=T10&date=20121120
+
+http://localhost:8080/JTicket/remain?trainNo=T10&date=20121120

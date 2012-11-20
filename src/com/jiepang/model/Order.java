@@ -2,7 +2,7 @@ package com.jiepang.model;
 
 public class Order {
 	
-	private String id;
+	private String orderNo;
 	
 	private String[] identifyNo;
 	
@@ -12,13 +12,6 @@ public class Order {
 	
 	private String trainNo;
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String[] getIdentifyNo() {
 		return identifyNo;
@@ -50,6 +43,14 @@ public class Order {
 
 	public void setTrainNo(String trainNo) {
 		this.trainNo = trainNo;
+	}
+
+	public String getOrderNo() {
+		return orderNo;
+	}
+
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
 	}
 
 }
